@@ -11,6 +11,8 @@ from django.db.models import Avg
 from django.db.models.functions import Round
 from django.core.mail import EmailMessage
 from config.settings import DEFAULT_FROM_EMAIL
+from django.utils.translation import gettext as _
+from django.contrib import messages
 
 
 
@@ -207,3 +209,4 @@ def contact_view(request):
             return redirect('app:index')
         
     return render(request,'app/contact.html',{'form':form})
+
